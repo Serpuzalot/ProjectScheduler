@@ -16,7 +16,7 @@ public class Process {
         this.priority = Utils.getRandomInteger(1,Configuration.maxPriority);
         this.timeIn = ClockGenerator.getTime();
         this.time = Utils.getRandomInteger(10,100);
-        this.burstTime = 0;
+        this.burstTime = Utils.getRandomInteger(10,30);
         this.state = State.Ready;
     }
 
@@ -33,11 +33,11 @@ public class Process {
     public Process(int id) {
         this.id = id;
         this.name = "P"+this.id;
-        this.memory = Utils.getRandomInteger(10,Configuration.memoryVolume/2);
+        this.memory = Utils.getRandomInteger(10,Math.round(Configuration.memoryVolume/3));
         this.priority = Utils.getRandomInteger(1,Configuration.maxPriority);
         this.timeIn = ClockGenerator.getTime();
         this.time = Utils.getRandomInteger(10,100);
-        this.burstTime = 0;
+        this.burstTime = Utils.getRandomInteger(10,30);
         this.state = State.Ready;
     }
 
